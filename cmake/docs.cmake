@@ -202,6 +202,24 @@ function( CreateDocJSWrappers )
     add_docs_cmake_plus( jswrappers.doc pkgdoc/jswrappersDoxyLayout.xml )
 endfunction()
 
+# ktxJavaWrappers.doc
+function( CreateDocJavaWrappers )
+    set( DOXYGEN_PROJECT_NAME "KTX Java Wrappers Reference" )
+    set( DOXYGEN_FULL_PATH_NAMES NO )
+    set( DOXYGEN_ALIASES author=\"\\section AUTHOR\\n\" )
+    set( DOXYGEN_LAYOUT_FILE pkgdoc/javaWrappersDoxyLayout.xml )
+    set( DOXYGEN_SHOW_FILES NO )
+    set( DOXYGEN_HTML_OUTPUT ktxJavaWrappers )
+    #set( DOXYGEN_GENERATE_TAGFILE ${docdest}/ktxJavaWrappers.tag )
+    set( DOXYGEN_TAGFILES ${docdest}/ktxpkg.tag=.. )
+
+    doxygen_add_docs(
+        javaWrappers.doc
+        interface/java_binding
+    )
+    add_docs_cmake_plus( javaWrappers.doc pkgdoc/javaWrappersDoxyLayout.xml )
+endfunction()
+
 # pyktxwrappers.doc
 function( CreateDocPyktxWrappers )
     add_custom_command(
@@ -239,6 +257,7 @@ endfunction()
 CreateDocLibKTX()
 CreateDocTools()
 CreateDocJSWrappers()
+CreateDocJavaWrappers()
 if (KTX_FEATURE_PY)
     CreateDocPyktxWrappers()
 endif()
@@ -246,6 +265,7 @@ CreateDocKTX()
 
 add_dependencies( libktx.doc ktxpkg.doc ktx_version )
 add_dependencies( jswrappers.doc ktxpkg.doc )
+add_dependencies( javaWrappers.doc ktxpkg.doc )
 add_dependencies( tools.doc ktxpkg.doc )
 
 # I want to add a dependency on the "package" built-in target.

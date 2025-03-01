@@ -6,9 +6,9 @@
     <tab type="pages" visible="yes" title="" intro=""/>
     <tab type="user" url="ktxtools/index.html" title="KTX Tools Reference"/>
     <tab type="user"  url="libktx/index.html" title="libktx Reference"/>
-    <tab type="user"  url="ktxjswrappers/index.html"
-         title="KTX Javascript Wrappers Reference"/>
+    <tab type="user"  url="ktxjswrappers/index.html" title="KTX Javascript Wrappers Reference"/>
     <tab type="user"  url="pyktx/index.html" title="pyktx Reference"/>
+    <tab type="user"  url="ktxJavaWrappers/index.html" title="KTX Java Wrappers Reference"/>
     <tab type="user"  url="@ref license" title=""/>
     <tab type="namespaces" visible="no" title="">
       <tab type="namespacelist" visible="no" title="" intro=""/>
